@@ -41,7 +41,7 @@ phases:
       - command
       - command
   pre_build:
-    run-as: Linux-user-name
+    run-as:
     on-failure: ABORT
     commands:
       - command
@@ -50,7 +50,7 @@ phases:
       - command
       - command
   build:
-    run-as: Linux-user-name
+    run-as:
     on-failure: ABORT
     commands:
       - command
@@ -59,7 +59,7 @@ phases:
       - command
       - command
   post_build:
-    run-as: Linux-user-name
+    run-as:
     on-failure: ABORT
     commands:
       - command
@@ -73,17 +73,17 @@ reports:
       - location
       - location
     base-directory: location
-    discard-paths: no | yes
+    discard-paths: no
     file-format: report-format
 artifacts:
   files:
     - location
     - location
   name: artifact-name
-  discard-paths: no | yes
+  discard-paths: no
   base-directory: location
   exclude-paths: excluded paths
-  enable-symlinks: no | yes
+  enable-symlinks: no
   s3-prefix: prefix
   secondary-artifacts:
     artifactIdentifier:
@@ -91,13 +91,13 @@ artifacts:
         - location
         - location
       name: secondary-artifact-name
-      discard-paths: no | yes
+      discard-paths: no
       base-directory: location
     artifactIdentifier:
       files:
         - location
         - location
-      discard-paths: no | yes
+      discard-paths: no
       base-directory: location
 cache:
   paths:
